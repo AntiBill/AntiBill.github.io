@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<head>
+	<title>Cuil Theory - About Us</title>
+	<link rel="shortcut icon" href="all\favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
+
+<body>
+	
+    <div id="banner">
+    <span id="logo"></span>
+    <span id="button1"><a href="home page.html"><button type="button", id=button>Home Page</button></a></span>
+    <span id="button2"><a href="http://Google.com" target="_blank"><button type="button", id=button>Google</button></a></span>
+    <span id="button3"><a href="about us.html"><button type="button", id=button>About Us</button></a></span>
+    </div>
+    
+    <div id="infobox">
+    <span id="infotitle">ABOUT US</span>
+    <div id="image1"><img src="about us\How Do They.jpg", width = 400 height = 250 alt="" id="image">
+    <span id = but1></span>
+    </div>
+	<br></br>
+    <span id="infopara">In truth, there isn't much to say.<br></br>We are a "team" of 2 highschool students learning all we know off of free and probably dodgy websites and trying to start a business of some sort.
+	One of us is constantly distracted from said business and so the other is trying to run everything single-handedly, which is both harder and more frustrating than it sounds.</span>
+    </div>
+	
+	<div id="leftpanel">
+    <span id="lpinfo">Button here?</span>
+	<br></br>
+    <span id="lppara">Placeholder text</span>
+	</div>
+	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+<script>
+	var infobox = document.getElementById("infobox");
+	var leftpanel = document.getElementById("leftpanel");
+	var sheight = screen.height;
+	var swidth = screen.width;
+	var pos = sheight-450;
+	var id = setInterval(frame, 5);
+	var id1 = setInterval(frame1, 5);
+	document.body.style.width = swidth-18 + "px";
+	async function frame() {
+		if (pos <= 0) {
+			if(infobox.style.opacity != 1){
+				infobox.style.opacity = 1 + 'px';
+			}
+			clearInterval(id);
+		} else {
+			pos=pos-2-pos/50;
+			infobox.style.marginTop = pos + 'px';
+			infobox.style.opacity = (1 / (5*(pos/(sheight-450)) + 1));
+		}
+	}
+	
+	var pos = sheight-450;
+	async function frame1() {
+		if (pos <= 0) {
+			clearInterval(id1);
+		} else {
+			pos=pos-2-pos/50;
+			leftpanel.style.marginLeft = -200 - (pos-20) + 'px';
+			leftpanel.style.opacity = (1 / (50*(pos/(sheight-450)) + 1));
+		}
+	}
+	
+			
+	$(document).ready(function(){
+		$("#leftpanel").hover(function(){
+			$(this).css("margin-left", "-1px");
+		}, function(){
+			$(this).css("margin-left", "-180px");
+		});
+	});
+	
+	$(document).ready(function(){
+		$("#image").hover(function(){
+			$(this).css("width", "410px");
+			$(this).css("height", "260px");
+			$("#image1").css("margin-top", "20px");
+			$("#image1").css("margin-right", "30px");
+			$("#but1").css("left", "195px");
+		
+		}, function(){
+			$(this).css("width", "400px");
+			$(this).css("height", "250px");
+			$("#image1").css("margin-top", "25px");
+			$("#image1").css("margin-right", "25px");
+			$("#but1").css("left", "190px");
+		});
+	});
+	
+	$(document).ready(function(){
+		$("#but1").hover(function(){
+			$("#image").css("width", "410px");
+			$("#image").css("height", "260px");
+			$("#image1").css("margin-top", "20px");
+			$("#image1").css("margin-right", "30px");
+			$(this).css("left", "195px");
+		
+		}, function(){
+		});
+	});
+</script>
+
+</body>
+</html>
+
